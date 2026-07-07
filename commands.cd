@@ -1,0 +1,12 @@
+# ARP Spoofing & MITM Commands Used
+
+## On Kali (Attacker)
+```bash
+# Enable IP forwarding
+sudo sysctl -w net.ipv4.ip_forward=1
+
+# Start the fake login server
+sudo python3 server.py
+
+# Sniff HTTP traffic
+sudo tcpdump -i tailscale0 -A port 80
